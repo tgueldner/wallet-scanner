@@ -1,5 +1,5 @@
 requests
 web3
-asyncio_throttle
 ScanWatch
 PyYAML
+python-telegram-handler
