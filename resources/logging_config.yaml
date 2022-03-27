@@ -20,6 +20,14 @@ handlers:
     level: INFO
     formatter: info
     stream: ext://sys.stdout
+  file:
+    class: logging.handlers.TimedRotatingFileHandler
+    filename: scanner.log
+    when: d
+    interval: 1
+    backupCount: 5
+    level: DEBUG
+    formatter: info
   telegram:
     class: telegram_handler.TelegramHandler
     formatter: telegram
@@ -27,6 +35,6 @@ handlers:
 
 root:
   level: DEBUG
-  handlers: [console, telegram]
+  handlers: [console, file, telegram]
   propagate: yes
 
