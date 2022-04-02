@@ -1,11 +1,9 @@
 import logging
 import logging.config
 import os
-import threading
 import time
 from queue import Queue
 
-import ScanWatch
 import yaml
 from threading import Thread
 from keys.api import ETH_API_KEY, BSC_API_KEY, POLY_API_KEY
@@ -14,9 +12,8 @@ from web3 import Web3
 
 w3 = Web3()
 
-from ScanWatch.ScanManager import ScanManager
 from ScanWatch.Client import Client
-from ScanWatch.utils.enums import NETWORK, TRANSACTION
+from ScanWatch.utils.enums import NETWORK
 
 clients = {
     NETWORK.ETHER: Client(ETH_API_KEY, NETWORK.ETHER),
