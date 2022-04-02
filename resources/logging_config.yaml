@@ -17,7 +17,7 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
-    level: INFO
+    level: DEBUG
     formatter: info
     stream: ext://sys.stdout
   file:
@@ -35,6 +35,6 @@ handlers:
 
 root:
   level: DEBUG
-  handlers: [console, file, telegram]
+  handlers: [console, telegram]
   propagate: yes
 
